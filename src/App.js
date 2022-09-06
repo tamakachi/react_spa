@@ -1,5 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+
+  //React hooks begins with use keyword
+import { useState } from 'react'
 
 function App() {
 
@@ -7,10 +9,14 @@ function App() {
   // For instance, although name variable is displayed in the h3, when name is changed on button click, the information in the browser does
   // not change, the variable however does change as shown in the console 
 
-  let name = "Kent"
+  // useState hook can be used to change state to allow the changing of variable value with simultaneous updates to the page
+
+
+
+   const [name, setName] = useState('Kent')
 
   const changeName = () => {
-    name = "Ben"
+    setName("Ben")
     console.log(name)
   }
 
