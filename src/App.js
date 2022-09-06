@@ -3,6 +3,10 @@ import './App.css';
 
 function App() {
 
+  // Changing a variable's value does not refresh the page with the same information
+  // For instance, although name variable is displayed in the h3, when name is changed on button click, the information in the browser does
+  // not change, the variable however does change as shown in the console 
+
   let name = "Kent"
 
   const changeName = () => {
