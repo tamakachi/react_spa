@@ -13,7 +13,10 @@ function App() {
 
 
 
-   const [name, setName] = useState('Kent')
+  // The first value (name for example) in a useState is the getter variable and it can be used to get the value like a normal variable
+  // The second value (setName for example) in a useState is the setter variable and it can be used to change the state to something else
+  
+
    const [list, setList] = useState([
     {name:"Kent",age:33,id:0},
     {name:"Ben",age:33,id:1},
@@ -21,19 +24,21 @@ function App() {
 
     
 
-  const changeName = () => {
-    setName("Ben")
-    console.log(name)
+  const deleteClick = (id) => {
+    setList(list.filter((item)=>{
+      return item.id!==id
+    }))
   }
 
   return (
     <div className="App">
       <h2>State</h2>
-      <h3>My name is {name}</h3>
-      <button onClick={changeName}>Change name variable</button>
+
+      {/* When outputting a list into JSX, a unique key is required for each entry, attach a key to each parent element such as a div */}
       {list.map((item)=>(
       <div key={item.id}>
         <h2>Name: {item.name}, Age: {item.age}</h2>
+        <button onClick={()=>{deleteClick(item.id)}}>Delete</button>
       </div>
       ))}
     </div>
