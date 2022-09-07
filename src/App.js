@@ -14,6 +14,12 @@ function App() {
 
 
    const [name, setName] = useState('Kent')
+   const [list, setList] = useState([
+    {name:"Kent",age:33,id:0},
+    {name:"Ben",age:33,id:1},
+    {name:"Max",age:11,id:2}])
+
+    console.log(list)
 
   const changeName = () => {
     setName("Ben")
