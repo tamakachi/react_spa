@@ -19,7 +19,7 @@ function App() {
     {name:"Ben",age:33,id:1},
     {name:"Max",age:11,id:2}])
 
-    console.log(list)
+    
 
   const changeName = () => {
     setName("Ben")
@@ -31,6 +31,11 @@ function App() {
       <h2>State</h2>
       <h3>My name is {name}</h3>
       <button onClick={changeName}>Change name variable</button>
+      {list.map((item)=>(
+      <div key={item.id}>
+        <h2>Name: {item.name}, Age: {item.age}</h2>
+      </div>
+      ))}
     </div>
   );
 }
