@@ -17,10 +17,12 @@ function App() {
   // The second value (setName for example) in a useState is the setter variable and it can be used to change the state to something else
   
 
-   const [list, setList] = useState([
+  const [list, setList] = useState([
     {name:"Kent",age:33,id:0},
     {name:"Ben",age:33,id:1},
     {name:"Max",age:11,id:2}])
+
+  const [showList, setShowList] = useState(true)
 
     
 // While it may be tempting, when using setState like setList to simply change the value of list, this can cause bugs
@@ -36,9 +38,17 @@ function App() {
   return (
     <div className="App">
       <h2>State</h2>
+      {/* Coe can be put in onClick methods, simply use an anonymous callback function, like ()=>{console.log("Hi")} inside the onClick{} */}
 
+      <button onClick={()=>{setShowList((prevState)=>{return prevState=true})}}>Show List</button>
+      <button onClick={()=>{setShowList((prevState)=>{return prevState=false})}}>Hide List</button>
+      <button onClick={()=>{console.log(showList)}}>ShowList Variable</button>
+      
       {/* When outputting a list into JSX, a unique key is required for each entry, attach a key to each parent element such as a div */}
-      {list.map((item)=>(
+      {/* To conditionally execute a block of code, simply place the boolean variable followed by && before the code block,
+        if the boolean is true, the code will execute, otherwise it will not execute */}
+      
+      {showList && list.map((item)=>(
       <div key={item.id}>
         <h2>Name: {item.name}, Age: {item.age}</h2>
         <button onClick={()=>{deleteClick(item.id)}}>Delete</button>
