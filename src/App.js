@@ -23,9 +23,12 @@ function App() {
     {name:"Max",age:11,id:2}])
 
     
+// While it may be tempting, when using setState like setList to simply change the value of list, this can cause bugs
+// If you want to change state without bugs, use prevState through a callback function and work with that instead
 
   const deleteClick = (id) => {
-    setList((prevState)=>{return prevState.filter((item)=>{
+    setList((prevState)=>{
+      return prevState.filter((item)=>{
       return item.id !== id
     })})
   }
