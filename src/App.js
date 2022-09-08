@@ -38,11 +38,15 @@ function App() {
   return (
     <div className="App">
       <h2>State</h2>
-      {/* Coe can be put in onClick methods, simply use an anonymous callback function, like ()=>{console.log("Hi")} inside the onClick{} */}
+      {/* Code can be put in onClick methods, simply use an anonymous callback function, like ()=>{console.log("Hi")} inside the onClick{} */}
 
+      {!showList && (<div>
       <button onClick={()=>{setShowList((prevState)=>{return prevState=true})}}>Show List</button>
-      <button onClick={()=>{setShowList((prevState)=>{return prevState=false})}}>Hide List</button>
-      <button onClick={()=>{console.log(showList)}}>ShowList Variable</button>
+      </div>)}
+      {showList && (
+      <div>
+        <button onClick={()=>{setShowList((prevState)=>{return prevState=false})}}>Hide List</button>
+      </div>)}
       
       {/* When outputting a list into JSX, a unique key is required for each entry, attach a key to each parent element such as a div */}
       {/* To conditionally execute a block of code, simply place the boolean variable followed by && before the code block,
