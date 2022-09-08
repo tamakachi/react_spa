@@ -25,9 +25,9 @@ function App() {
     
 
   const deleteClick = (id) => {
-    setList(list.filter((item)=>{
-      return item.id!==id
-    }))
+    setList((prevState)=>{return prevState.filter((item)=>{
+      return item.id !== id
+    })})
   }
 
   return (
