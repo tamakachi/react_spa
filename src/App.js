@@ -5,6 +5,8 @@ import { useState } from 'react'
 
 import Title from './components/Title';
 import RandomText from './components/RandomText';
+import Modal from './components/Modal';
+
 function App() {
   
 
@@ -63,6 +65,11 @@ function App() {
         <button onClick={()=>{deleteClick(item.id)}}>Delete</button>
       </div>
       ))}
+
+        <Modal>
+          <h3>We are children props</h3>
+          <h3>We can be accessed inside the component by using props.children</h3>
+        </Modal>
     </div>
   );
 }
