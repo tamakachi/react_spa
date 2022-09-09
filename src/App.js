@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <Title />
+      <Title title="Props" subtitle="These are props used in a react component" />
       <h2>State</h2>
       {/* Code can be put in onClick methods, simply use an anonymous callback function, like ()=>{console.log("Hi")} inside the onClick{} */}
 
