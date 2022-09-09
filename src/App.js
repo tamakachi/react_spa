@@ -3,7 +3,9 @@ import './App.css';
   //React hooks begins with use keyword
 import { useState } from 'react'
 
+import Title from './components/Title';
 function App() {
+  
 
   // Changing a variable's value does not refresh the page with the same information
   // For instance, although name variable is displayed in the h3, when name is changed on button click, the information in the browser does
@@ -37,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <Title />
       <h2>State</h2>
       {/* Code can be put in onClick methods, simply use an anonymous callback function, like ()=>{console.log("Hi")} inside the onClick{} */}
 
