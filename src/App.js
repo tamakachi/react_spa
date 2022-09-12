@@ -6,6 +6,7 @@ import { useState } from 'react'
 import Title from './components/Title';
 import RandomText from './components/RandomText';
 import Modal from './components/Modal';
+import EventList from './components/EventList';
 
 function App() {
   
@@ -28,6 +29,12 @@ function App() {
     {name:"Max",age:11,id:2}])
 
   const [showList, setShowList] = useState(true)
+  const [showModal,setShowModal] = useState(false)
+
+
+  const hideModal = () => {
+    setShowModal((prevState)=>{return prevState=false})
+  }
 
     
 // While it may be tempting, when using setState like setList to simply change the value of list, this can cause bugs
@@ -65,11 +72,11 @@ function App() {
         <button onClick={()=>{deleteClick(item.id)}}>Delete</button>
       </div>
       ))}
-
-        <Modal>
+      <button onClick={()=>{setShowModal(true)}}>Show Modal</button>
+        {showModal && <Modal hideModal={hideModal}>
           <h3>We are children props</h3>
           <h3>We can be accessed inside the component by using props.children</h3>
-        </Modal>
+        </Modal>}
     </div>
   );
 }
