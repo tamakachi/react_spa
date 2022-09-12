@@ -66,12 +66,8 @@ function App() {
       {/* To conditionally execute a block of code, simply place the boolean variable followed by && before the code block,
         if the boolean is true, the code will execute, otherwise it will not execute */}
       
-      {showList && list.map((item)=>(
-      <div key={item.id}>
-        <h2>Name: {item.name}, Age: {item.age}</h2>
-        <button onClick={()=>{deleteClick(item.id)}}>Delete</button>
-      </div>
-      ))}
+      {showList && <EventList list={list} deleteClick={deleteClick}></EventList>}
+
       <button onClick={()=>{setShowModal(true)}}>Show Modal</button>
         {showModal && <Modal hideModal={hideModal}>
           <h3>We are children props</h3>
