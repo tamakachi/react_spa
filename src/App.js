@@ -69,9 +69,9 @@ function App() {
       {showList && <EventList list={list} deleteClick={deleteClick}></EventList>}
 
       <button onClick={()=>{setShowModal(true)}}>Show Modal</button>
-        {showModal && <Modal hideModal={hideModal}>
+        {showModal && <Modal hideModal={hideModal} isSalesModal="true">
           <h3>We are children props</h3>
-          <h3>We can be accessed inside the component by using props.children</h3>
+          <h4>We can be accessed inside the component by using props.children</h4>
         </Modal>}
     </div>
   );

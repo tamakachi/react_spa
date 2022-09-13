@@ -5,8 +5,8 @@ export default function Modal(props) {
     <div className="modal-backdrop">
       <div className="modal" style={{
         border: "4px solid",
-        borderColor: "#ff4500",
-        tectAlign:"center"
+        borderColor: props.isSalesModal ? "#ff4500" : "#555",
+        textAlign:"center"
       }}>
         {props.children}
         <button onClick={props.hideModal}>Close</button>
