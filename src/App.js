@@ -7,7 +7,7 @@ import Title from './components/Title';
 import RandomText from './components/RandomText';
 import Modal from './components/Modal';
 import EventList from './components/EventList';
-import NewEventForm from './NewEventForm';
+import NewEventForm from './components/NewEventForm';
 
 function App() {
   
