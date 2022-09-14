@@ -7,6 +7,7 @@ import Title from './components/Title';
 import RandomText from './components/RandomText';
 import Modal from './components/Modal';
 import EventList from './components/EventList';
+import NewEventForm from './NewEventForm';
 
 function App() {
   
@@ -68,10 +69,9 @@ function App() {
       
       {showList && <EventList list={list} deleteClick={deleteClick}></EventList>}
 
-      <button onClick={()=>{setShowModal(true)}}>Show Modal</button>
+      <button onClick={()=>{setShowModal(true)}}>Add New Event</button>
         {showModal && <Modal hideModal={hideModal} isSalesModal="true">
-          <h3>We are children props</h3>
-          <h4>We can be accessed inside the component by using props.children</h4>
+          <NewEventForm />
         </Modal>}
     </div>
   );
