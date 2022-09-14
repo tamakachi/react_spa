@@ -9,4 +9,4 @@
 
 /* Remember with CSS Modules, when targeting elements directly, like p{} it will still affect the whole page globally,
 so remember to stick to classes and ID's and if you need to use elements like p or h2 then be specific by adding
-a parent class before it eg. .card h1{} */
+a parent class before it eg .card h1{} */
