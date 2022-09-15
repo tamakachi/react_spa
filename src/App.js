@@ -34,7 +34,7 @@ function App() {
     setList((prevState)=>{
       return [...prevState,event]
     })
-
+    hideModal()
 
   }
 
