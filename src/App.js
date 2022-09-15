@@ -24,14 +24,19 @@ function App() {
   // The second value (setName for example) in a useState is the setter variable and it can be used to change the state to something else
   
 
-  const [list, setList] = useState([
-    {name:"Kent",age:33,id:0},
-    {name:"Ben",age:33,id:1},
-    {name:"Max",age:11,id:2}])
+  const [list, setList] = useState([])
 
   const [showList, setShowList] = useState(true)
   const [showModal,setShowModal] = useState(false)
 
+
+  const addEvent = (event) =>{
+    setList((prevState)=>{
+      return [...prevState,event]
+    })
+
+
+  }
 
   const hideModal = () => {
     setShowModal((prevState)=>{return prevState=false})
@@ -71,7 +76,7 @@ function App() {
 
       <button onClick={()=>{setShowModal(true)}}>Add New Event</button>
         {showModal && <Modal hideModal={hideModal} isSalesModal="true">
-          <NewEventForm />
+          <NewEventForm addEvent={addEvent}/>
         </Modal>}
     </div>
   );
