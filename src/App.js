@@ -20,8 +20,8 @@ function App() {
 
 
 
-  // The first value (name for example) in a useState is the getter variable and it can be used to get the value like a normal variable
-  // The second value (setName for example) in a useState is the setter variable and it can be used to change the state to something else
+  // The first value (list for example) in a useState is the getter variable and it can be used to get the value like a normal variable
+  // The second value (setList for example) in a useState is the setter variable and it can be used to change the state to something else
   
 
   const [list, setList] = useState([])
